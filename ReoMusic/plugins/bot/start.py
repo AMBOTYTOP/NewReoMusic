@@ -20,7 +20,7 @@ from ReoMusic.utils.database import (
 from ReoMusic.utils.decorators.language import LanguageStart
 from ReoMusic.utils.formatters import get_readable_time
 from ReoMusic.utils.inline import help_pannel, private_panel, start_panel
-from config import BANNED_USERS
+from config import BANNED_USERS, START_IMG_URL
 from strings import get_string
 from ReoMusic.utils import bot_sys_stats
 from ReoMusic.utils.database import get_served_users, get_served_chats
