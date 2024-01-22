@@ -20,7 +20,7 @@ from ReoMusic.utils.database import (
 from ReoMusic.utils.decorators.language import LanguageStart
 from ReoMusic.utils.formatters import get_readable_time
 from ReoMusic.utils.inline import help_pannel, private_panel, start_panel
-from config import BANNED_USERS, START_IMG_URL
+from config import BANNED_USERS, START_IMG_URL, REOSTATS
 from strings import get_string
 from ReoMusic.utils import bot_sys_stats
 from ReoMusic.utils.database import get_served_users, get_served_chats
@@ -42,8 +42,8 @@ async def start_pm(client, message: Message, _):
         if name[0:4] == "help":
             keyboard = help_pannel(_)
             return await message.reply_photo(
-                photo=config.START_IMG_URL,
-                caption=_["help_1"].format(config.SUPPORT_CHAT),
+                photo=random.choice(START_IMG_URL),
+                caption=_["help_1"].format(config.REOSTATS),
                 reply_markup=keyboard,
             )
         if name[0:3] == "sud":
@@ -75,7 +75,7 @@ async def start_pm(client, message: Message, _):
                 [
                     [
                         InlineKeyboardButton(text=_["S_B_8"], url=link),
-                        InlineKeyboardButton(text=_["S_B_9"], url=config.SUPPORT_CHAT),
+                        InlineKeyboardButton(text="𝘉𝘰𝘵𝘴 𝘚𝘵𝘢𝘵𝘶𝘴", url=config.REOSTATS),
                     ],
                 ]
             )
@@ -115,7 +115,7 @@ async def start_gp(client, message: Message, _):
     out = start_panel(_)
     uptime = int(time.time() - _boot_)
     await message.reply_photo(
-        photo=config.START_IMG_URL,
+        photo=random.choice(START_IMG_URL),
         caption=_["start_1"].format(app.mention, get_readable_time(uptime)),
         reply_markup=InlineKeyboardMarkup(out),
     )
@@ -142,7 +142,7 @@ async def welcome(client, message: Message):
                         _["start_5"].format(
                             app.mention,
                             f"https://t.me/{app.username}?start=sudolist",
-                            config.SUPPORT_CHAT,
+                            config.REOSTATS,
                         ),
                         disable_web_page_preview=True,
                     )
@@ -150,7 +150,7 @@ async def welcome(client, message: Message):
 
                 out = start_panel(_)
                 await message.reply_photo(
-                    photo=config.START_IMG_URL,
+                    photo=random.choice(START_IMG_URL),
                     caption=_["start_3"].format(
                         message.from_user.first_name,
                         app.mention,
