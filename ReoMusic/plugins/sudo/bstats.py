@@ -36,10 +36,10 @@ db = mongo.users
 db = db.users
 
 AM_PIC = [
-    "https://graph.org/file/98e87a02d3fffdaef2fd5.jpg",
-    "https://graph.org/file/98e87a02d3fffdaef2fd5.jpg",
-    "https://graph.org/file/98e87a02d3fffdaef2fd5.jpg",
-    "https://graph.org/file/98e87a02d3fffdaef2fd5.jpg"
+    "https://graph.org/file/b29c2cf5e67b67a7c2df4.jpg",
+    "https://graph.org/file/b29c2cf5e67b67a7c2df4.jpg",
+    "https://graph.org/file/b29c2cf5e67b67a7c2df4.jpg",
+    "https://graph.org/file/b29c2cf5e67b67a7c2df4.jpg"
 ]
 
 #CHATGROUP
@@ -208,7 +208,7 @@ async def chat_watcher_func(_, message):
         pass
 
 
-@AM.on_message(filters.command(["bstats"], [".", "!", "/"]))
+@AM.on_message(filters.command(["stats"], [".", "!", "/"]))
 async def stats(cli: Client, message: Message):
     users = len(await get_users())
     chats = len(await get_chats())
