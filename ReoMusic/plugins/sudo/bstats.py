@@ -208,7 +208,7 @@ async def chat_watcher_func(_, message):
         pass
 
 
-@AM.on_message(filters.command(["stats"], [".", "!", "/"]))
+@AM.on_message(filters.command(["bstats"], [".", "!", "/"]))
 async def stats(cli: Client, message: Message):
     users = len(await get_users())
     chats = len(await get_chats())
