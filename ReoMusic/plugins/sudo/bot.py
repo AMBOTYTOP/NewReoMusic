@@ -31,5 +31,5 @@ async def activevc(_, message: Message):
     uptime = time_formatter((time.time() - start_time) * 1000)
     cpu = psutil.cpu_percent()
     UP, CPU, RAM, DISK = await bot_sys_stats()
-    TEXT = f"Uᴘᴛɪᴍᴇ: {UP} | CPU Lᴏᴀᴅ: {CPU}| RAM Cᴏɴsᴜᴘᴛɪᴏɴ:{RAM}"
+    TEXT = f"Uᴘᴛɪᴍᴇ: {UP} | CPU Lᴏᴀᴅ: {CPU}| RAM :{RAM}"
     await message.reply(TEXT)
