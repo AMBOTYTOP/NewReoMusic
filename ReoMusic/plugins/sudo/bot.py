@@ -5,6 +5,7 @@ from pyrogram import Client
 from pyrogram import filters 
 from pyrogram.types import Message
 from ReoMusic.core.userbot import assistants
+from ReoMusic.utils import bot_sys_stats
 
 start_time = time.time()
 
@@ -29,5 +30,6 @@ def time_formatter(milliseconds):
 async def activevc(_, message: Message):
     uptime = time_formatter((time.time() - start_time) * 1000)
     cpu = psutil.cpu_percent()
-    TEXT = f"ᴜᴘᴛɪᴍᴇ : {uptime} | ᴄᴘᴜ : {cpu}% "
+    UP, CPU, RAM, DISK = await bot_sys_stats()
+    TEXT = f"Uᴘᴛɪᴍᴇ: {UP} | CPU Lᴏᴀᴅ: {CPU}| RAM Cᴏɴsᴜᴘᴛɪᴏɴ:{RAM}"
     await message.reply(TEXT)
