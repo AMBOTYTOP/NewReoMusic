@@ -21,6 +21,7 @@ UPSTREAM_REPO = getenv("UPSTREAM_REPO","https://github.com/AMOPBOT/NewReoMusic",
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv("GIT_TOKEN", None) 
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/ReoBots")
+REOSTATS = getenv("REOSTATS", "https://t.me/ReoStatusBots")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/AM_YTSUPPORT")
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "True")
 AUTO_LEAVE_ASSISTANT_TIME = int(
