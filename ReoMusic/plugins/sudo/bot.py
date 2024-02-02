@@ -41,5 +41,5 @@ async def activevc(_, message: Message):
     UP, CPU, RAM, DISK = await bot_sys_stats()
     ac_audio = str(len(await get_active_chats()))
     ac_video = str(len(await get_active_video_chats()))
-    TEXT = f"Uᴘᴛɪᴍᴇ» {UP} CPU Lᴏᴀᴅ» {CPU} ᴠᴏɪᴄᴇ» {ac_audio}"
+    TEXT = f"Uᴘᴛɪᴍᴇ » {UP} CPU Lᴏᴀᴅ » {CPU} ᴠᴏɪᴄᴇ » {ac_audio}"
     await message.reply(TEXT)
