@@ -6,6 +6,14 @@ from pyrogram import filters
 from pyrogram.types import Message
 from ReoMusic.core.userbot import assistants
 from ReoMusic.utils import bot_sys_stats
+from ReoMusic import app
+from ReoMusic.misc import SUDOERS
+from ReoMusic.utils.database import (
+    get_active_chats,
+    get_active_video_chats,
+    remove_active_chat,
+    remove_active_video_chat,
+)
 
 start_time = time.time()
 
@@ -31,5 +39,7 @@ async def activevc(_, message: Message):
     uptime = time_formatter((time.time() - start_time) * 1000)
     cpu = psutil.cpu_percent()
     UP, CPU, RAM, DISK = await bot_sys_stats()
-    TEXT = f"Uᴘᴛɪᴍᴇ: {UP} | CPU Lᴏᴀᴅ: {CPU}| RAM :{RAM}"
+    ac_audio = str(len(await get_active_chats()))
+    ac_video = str(len(await get_active_video_chats()))
+    TEXT = f"Uᴘᴛɪᴍᴇ» {UP} CPU Lᴏᴀᴅ» {CPU} ᴠᴏɪᴄᴇ» {ac_audio}"
     await message.reply(TEXT)
